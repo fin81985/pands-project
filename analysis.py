@@ -1,13 +1,13 @@
 # Data manipulation
-import numpy as np
-import pandas as pd
+import numpy as np # For numerical operations
+import pandas as pd # For data manipulation and analysis
 
 # Machine Learning Library
-import sklearn
+import sklearn # For machine learning algorithms
 from sklearn import datasets  # If you need built-in datasets
 
 # Plotting
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt # For basic plotting
 import seaborn as sns  # Visualization library based on matplotlib
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
