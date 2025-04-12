@@ -1,8 +1,14 @@
-# pands-project
+# pands-project 2025
 
-1. Project looking at the iris dataset.
-2. You must research the data set.
-3. Write documentation and code (in Python).
+## Programming & Scripting Project- Analysis of the Iris Flower Data Set
+
+#### Author : Finian Doonan
+
+## Introduction
+
+This repository contains the pands project for the Programming and Scripting module, This forms part of the ATU HDIP in Data Analytics 2025.
+This repository explores and analyzes the Iris Data Set. It includes data introduction, manipulation, visualizations like histograms and scatter plots, and a summary of the findings.
+
 
 Write a program called analysis.py that:
 1. Outputs a summary of each variable to a single text file,
