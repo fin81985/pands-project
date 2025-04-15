@@ -4,12 +4,12 @@ import pandas as pd # For data manipulation and analysis
 
 # Machine Learning Library
 import sklearn # For machine learning algorithms
-from sklearn import datasets  # If you need built-in datasets
+from sklearn import datasets  # For loading datasets
 
 # Plotting
 import matplotlib.pyplot as plt # For basic plotting
 import seaborn as sns  # Visualization library based on matplotlib
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LinearRegression 
 from sklearn.metrics import r2_score
 
 # task 1: Load the dataset
@@ -32,7 +32,7 @@ df
 # Look at the keys
 df.keys()
 
-# Rename columns to meaningful names
+# Rename columns to better names
 df.columns = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
 
 # The species of iris
@@ -61,7 +61,7 @@ print(stats)
 
 # task 4 visualization
 
-# Given summary statistics
+#  summary statistics
 stats = {
     "sepal_length": np.random.normal(5.843333, 0.828066, 150),
     "sepal_width": np.random.normal(3.054000, 0.433594, 150),
@@ -87,7 +87,7 @@ plt.show()
 # Scatter plot of sepal length vs sepal width
 
 
-# Generate synthetic class labels with meaningful names
+# Generate synthetic class labels with names
 class_names = ["Setosa", "Versicolor", "Virginica"]
 classes = np.random.choice(class_names, size=150)
 colors = {'Setosa': 'r', 'Versicolor': 'g', 'Virginica': 'b'}
