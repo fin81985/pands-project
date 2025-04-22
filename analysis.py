@@ -12,16 +12,11 @@ import seaborn as sns  # Visualization library based on matplotlib
 from sklearn.linear_model import LinearRegression 
 from sklearn.metrics import r2_score
 
-# task 1: Load the dataset
-
-
 # Load the iris dataset.
 df = pd.read_csv("iris_dataset/iris.data")
 
 # Have a look.
 df
-
-# task 2 examine the data set
 
 # Describe the data set.
 df.describe()
@@ -50,16 +45,12 @@ df['petal_length']
 # the petal width
 df['petal_width']
 
-# task 3 summary statistics
-
 # Statistics
 stats = df.describe().T[['mean', 'min', 'max', 'std']]
 stats['median'] = df.median(numeric_only=True) # select only the numeric columns
 
 # Print results
 print(stats)
-
-# task 4 visualization
 
 #  summary statistics
 stats = {
@@ -77,15 +68,11 @@ axes = axes.ravel()
 for idx, (feature, values) in enumerate(stats.items()):
     axes[idx].hist(values, bins=20, edgecolor='black', alpha=0.7)
     axes[idx].set_title(feature)
-    axes[idx].set_xlabel("Value (mm)")
+    axes[idx].set_xlabel("Value (cm)")
     axes[idx].set_ylabel("Frequency")
 
 plt.tight_layout()
 plt.show()
-
-# task 5 relationship between features
-# Scatter plot of sepal length vs sepal width
-
 
 # Generate synthetic class labels with names
 class_names = ["Setosa", "Versicolor", "Virginica"]
@@ -104,13 +91,11 @@ for class_label in np.unique(classes):
     )
 
 # Add labels and legend
-plt.xlabel("Sepal Length (mm)")
-plt.ylabel("Petal Length (mm)")
+plt.xlabel("Sepal Length (cm)")
+plt.ylabel("Petal Length (cm)")
 plt.title("Scatter Plot of Sepal Length vs Petal Length")
 plt.legend()
 plt.show()
-
-# task 6 linear regression
 
 # Scatter plot of sepal_length vs petal_length
 plt.figure(figsize=(8, 6))
@@ -138,13 +123,11 @@ y_line = polynomial(x_line)
 plt.plot(x_line, y_line, color='k', linestyle='-', linewidth=3, label='Regression Line')
 
 # Add labels and title
-plt.xlabel("Sepal Length (mm) ")
-plt.ylabel("Petal Length (mm)")
+plt.xlabel("Sepal Length (cm) ")
+plt.ylabel("Petal Length (cm)")
 plt.title("Scatter Plot of Sepal Length vs Petal Length")
 plt.legend()
 plt.show()
-
-# task 7 box plot
 
 # Create box-plots for petal lengths of each class
 plt.figure(figsize=(8, 6)) 
@@ -158,13 +141,9 @@ plt.boxplot(petal_lengths_by_class, tick_labels=[f'Class {c}' for c in np.unique
 
 # Add labels
 plt.xlabel("Class")
-plt.ylabel("Petal Length")
+plt.ylabel("Petal Length (cm)")
 plt.title("Box Plot of Petal Lengths for Each Class")
 plt.show()
-
-# task 8 heatmap
-
-
 
 # Convert to DataFrame
 df = pd.DataFrame(stats)
@@ -177,12 +156,10 @@ plt.figure(figsize=(8, 6))
 sns.heatmap(correlation_matrix, annot=True, cmap="coolwarm", fmt=".2f", linewidths=0.5)
 
 # Add title
-plt.title("Correlation Heatmap of Iris Features", fontsize=14, fontweight='bold')
+plt.title("Correlation Heatmap of Iris Features (cm)", fontsize=14, fontweight='bold')
 
 # Show plot
 plt.show()
-
-# task 9 pair plot
 
 # Create pair plot
 # Add species column separately to ensure proper assignment
@@ -190,9 +167,20 @@ df["species"] = np.random.choice(["setosa", "versicolor", "virginica"], 150)
 
 # Ensure 'species' column exists
 if "species" not in df.columns:
-    raise KeyError("Column 'species' is missing from DataFrame")
+    print("Warning: 'species' column is missing from DataFrame")
 
 # Create pair plot
 sns.pairplot(df, hue="species", diag_kind="kde", markers=["o", "s", "D"])
 plt.show()
 
+# Create violin plot
+plt.figure(figsize=(8, 6))
+sns.violinplot(x='species', y='petal_length', data=df)# add x and y axis
+
+# Add title and labels
+plt.title('Distribution of Petal Length by Species')
+plt.xlabel('Species')
+plt.ylabel('Petal Length (cm)')
+
+# Show plot
+plt.show()
