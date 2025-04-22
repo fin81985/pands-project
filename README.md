@@ -1,65 +1,93 @@
-# pands-project 2025
 
-## Programming & Scripting Project- Analysis of the Iris Flower Data Set
+# Project 2025 – Iris Dataset Analysis  
+**Module:** Programming and Scripting  
+**Author:** Finian Doonan  
 
-#### Author : Finian Doonan
+---
 
-## Introduction
+##  Introduction
 
-This repository contains the pands project for the Programming and Scripting module, This forms part of the ATU HDIP in Data Analytics 2025.
-This repository explores and analyzes the Iris Data Set. It includes data introduction, manipulation, visualizations like histograms and scatter plots, and a summary of the findings.
+The **Iris dataset** is a classic in the field of statistics and machine learning. Introduced by Ronald A. Fisher in 1936, it contains measurements of 150 iris flowers across three species: *setosa*, *versicolor*, and *virginica*. Each sample includes four numerical features: sepal length, sepal width, petal length, and petal width.
 
+This project uses Python and several data science libraries to:
+- Explore the dataset
+- Generate statistical summaries
+- Create visualizations
+- Perform linear regression
+- Examine feature correlations
 
-Write a program called analysis.py that:
-1. Outputs a summary of each variable to a single text file,
-2. Saves a histogram of each variable to png files, and
-3. Outputs a scatter plot of each pair of variables.
-4. Performs any other analysis you think is appropriate.
+---
 
-### breakdown analysis
+##  Libraries Used
 
-1. Import Libraries
+- **NumPy**: Numerical operations
+- **Pandas**: Data manipulation
+- **Scikit-learn**: ML utilities and datasets
+- **Matplotlib**: Plotting library
+- **Seaborn**: Statistical data visualization
 
-- Load essential Python libraries such as pandas, numpy, matplotlib, and seaborn.​
+---
 
-2. Inspect Variable Types
+## Loading the Dataset
 
-- Examine the data types of each column to understand the structure of the dataset.​
+```python
+df = pd.read_csv("iris_dataset/iris.data")
+```
 
-3. Data Exploration
+The dataset is loaded into a Pandas DataFrame and column names are renamed for clarity:
+```python
+df.columns = ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
+```
 
-- Display the first few rows to get an initial glimpse of the data.​
+---
 
-- Check the dataset's shape to determine the number of rows and columns.​
+##  Summary Statistics
 
-- Examine specific rows to understand individual data entries.​
+Descriptive statistics such as **mean, median, min, max, and standard deviation** were calculated for each feature using Pandas.  
+Example output:
+```
+              mean   min   max    std   median
+sepal_length  5.84  4.3   7.9   0.83    5.8
+petal_length  3.77  1.0   6.9   1.76    4.4
+```
 
-- Analyze the distribution of the target variable, 'species', to see the balance among classes.​
+This code calculates basic statistics for each numerical feature in the Iris dataset.
 
-- Compute summary statistics for numerical variables to assess central tendencies and dispersions.​
+---
 
-4. Generate and Save Variable Summaries
+## Visualizations
 
-- Create descriptive statistics for each variable and save them for reference.​
+### 1. **Histograms**
+Histograms show the distribution of each feature using values generated from a normal distribution with the same mean and standard deviation as the actual dataset.
 
-5. Create Histograms for Each Variable
+### 2. **Scatter Plot: Sepal Length vs Petal Length**
+Using randomly assigned class labels, a scatter plot showed patterns between two features. Different classes were color-coded to show the diffrence between the species.
 
-- Visualize the distribution of each numerical feature to identify patterns and potential anomalies.​
+### 3. **Linear Regression Line**
+A regression line was fitted to the above scatter plot using `numpy.polyfit`. This helped showed the **linear relationship** between sepal length and petal length.
 
-6. Scatter Plots of Variable Pairs by Species
+### 4. **Box Plots**
+Box plots show the spread of petal lengths across the three classes, highlighting medians and potential outliers.
 
-- Plot pairwise relationships between numerical variables, color-coded by species, to observe potential correlations and class separations.​
+### 5. **Heatmap**
+A **correlation matrix** shown with a heatmap highlights the relationships between features. For example, petal length and petal width show a strong positive correlation due to the color intense.
 
-7. Correlation Analysis & Heatmap
+### 6. **Pair Plot**
+A pair plot provides scatter plots for all the features colored by species. It reveals relationships useful for classification tasks.
 
-- Compute the correlation matrix to quantify relationships between numerical variables.​
+---
 
-- Visualize the correlation matrix using a heatmap to easily identify strong correlations.​
+##  References
 
-8. Box Plots for Outlier Detection
+- [UCI Iris Dataset](https://archive.ics.uci.edu/dataset/53/iris)
+- [NumPy Documentation](https://numpy.org/doc/stable/user/index.html)
+- [Pandas Documentation](https://pandas.pydata.org/docs/)
+- [Scikit-learn Guide](https://scikit-learn.org/stable/user_guide.html)
+- [Matplotlib Users Guide](https://matplotlib.org/stable/users/index.html)
+- [Seaborn Documentation](https://seaborn.pydata.org/index.html)
 
-- Generate box plots for each numerical variable to detect and visualize outliers.​
+---
 
-9. Pair Plot Visualization
+##  Conclusion
 
-- Create pair plots to provide a comprehensive view of relationships between all pairs of variables, differentiated by species.
+This project was a great learning experience for someone new to programming. By working with the Iris dataset, some good hands on experience of using Python and some popular libraries used in data science. Through simple visualizations and basic statistical analysis, I was able to discover interesting patterns in the data. It really helped me understand how programming can be used to explore and make sense of real world data.
