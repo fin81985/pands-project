@@ -1,3 +1,9 @@
+# Project 2025: Iris Dataset Analysis
+
+# Module: Programming and Scripting
+# Author: Finian Doonan
+
+
 # Data manipulation
 import numpy as np # For numerical operations
 import pandas as pd # For data manipulation and analysis
