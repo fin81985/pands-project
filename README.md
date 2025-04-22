@@ -78,6 +78,9 @@ A **correlation matrix** shown with a heatmap highlights the relationships betwe
 ### 6. **Pair Plot**
 A pair plot provides scatter plots for all the features colored by species. It reveals relationships useful for classification tasks.
 
+### 7. **Violin Plots**
+Violin plots shows the spread and shape of data. It combines a box plot with a smooth curve that shows how the data is spread out.
+
 ---
 
 ##  References
