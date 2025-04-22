@@ -15,7 +15,8 @@ This project uses Python and several data science libraries to:
 - Create visualizations
 - Perform linear regression
 - Examine feature correlations
-
+  
+You can view the full analysis and code in the [tasks.ipynb](tasks.ipynb) notebook.
 ---
 
 ##  Libraries Used
