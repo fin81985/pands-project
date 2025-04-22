@@ -90,4 +90,4 @@ A pair plot provides scatter plots for all the features colored by species. It r
 
 ##  Conclusion
 
-This project was a great learning experience for someone new to programming. By working with the Iris dataset, some good hands on experience of using Python and some popular libraries used in data science. Through simple visualizations and basic statistical analysis, I was able to discover interesting patterns in the data. It really helped me understand how programming can be used to explore and make sense of real world data.
+This project was a great learning experience for someone new to programming. By working with the Iris dataset I got some good hands on experience of using Python and some popular libraries used in data science. Through some visualizations and basic statistical analysis, I was able to discover interesting patterns in the data. It really helped me understand how programming can be used to explore and make sense of real world data.
